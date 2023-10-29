@@ -1,0 +1,9 @@
+[click]
+full_text=vc
+command=echo "<<hi" 
+color=#ff0000
+
+# Update time every 5 seconds
+[time]
+command=date +%T
+interval=5
