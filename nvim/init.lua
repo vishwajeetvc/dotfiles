@@ -2,6 +2,7 @@ require("config.lazy")
 require("config.lsp")
 
 
+vim.o.cmdheight = 0
 vim.o.number = true                -- Show line numbers
 vim.o.relativenumber = true       -- Relative line numbers
 vim.o.tabstop = 2                 -- Number of spaces for a tab
@@ -26,3 +27,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fin
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help Tags" })
+
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = true })
+

@@ -1,0 +1,29 @@
+window:
+  padding:
+    x: 2
+    y: 2
+  decorations: none
+  opacity: 0.95
+
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: "ExtraLight Italic"
+  size: 10.0
+  builtin_box_drawing: true
+  offset : 
+    x : 0
+    y : 0
+
+colors:
+  primary:
+    background: '#1d2021'
+    foreground: '#ebdbb2'
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
+
+mouse:
+  hide_when_typing: true
