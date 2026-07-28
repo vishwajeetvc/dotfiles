@@ -1,0 +1,211 @@
+/*
+ * Antigravity High-Aesthetic Waybar Stylesheet
+ * Themes: Catppuccin Mocha, Floating Triple-Pill, Glassmorphic
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    min-height: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Window Configuration */
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(17, 17, 27, 0.85);
+    border: 1px solid rgba(180, 190, 254, 0.2);
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+    padding: 6px 10px;
+}
+
+/* -------------------------------------------------------------
+ * Triple-Pill Capsules
+ * ------------------------------------------------------------- */
+
+.modules-left {
+    background: rgba(24, 24, 37, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2px 8px;
+    margin: 0px 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.modules-center {
+    background: rgba(24, 24, 37, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2px 14px;
+    margin: 0px 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.modules-right {
+    background: rgba(24, 24, 37, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2px 8px;
+    margin: 0px 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------------------------
+ * Left Pill: Workspaces & Window Name
+ * ------------------------------------------------------------- */
+
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 2px 0;
+    color: #6c7086;
+    background: transparent;
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    color: #11111b;
+    background: linear-gradient(45deg, #b4befe, #cba6f7);
+    box-shadow: 0 0 8px rgba(180, 190, 254, 0.4);
+    padding: 0 12px;
+}
+
+#workspaces button:hover {
+    color: #f5c2e7;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #f38ba8;
+}
+
+#window {
+    color: #cdd6f4;
+    padding-left: 12px;
+    padding-right: 6px;
+    font-weight: 500;
+}
+
+/* -------------------------------------------------------------
+ * Center Pill: Clock
+ * ------------------------------------------------------------- */
+
+#clock {
+    color: #b4befe;
+    font-size: 13px;
+}
+
+/* -------------------------------------------------------------
+ * Right Pill: System Information Modules
+ * ------------------------------------------------------------- */
+
+#pulseaudio,
+#backlight,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#tray {
+    padding: 0 8px;
+    margin: 2px 0;
+}
+
+#pulseaudio {
+    color: #f5c2e7; /* Pink */
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+#backlight {
+    color: #eed49f; /* Bright Yellow */
+}
+
+#network {
+    color: #89dceb; /* Sky */
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#cpu {
+    color: #f38ba8; /* Red */
+}
+
+#memory {
+    color: #fab387; /* Peach */
+}
+
+#temperature {
+    color: #f9e2af; /* Yellow */
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#battery {
+    color: #a6e3a1; /* Green */
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink-critical 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink-critical {
+    to {
+        color: #1e1e2e;
+        background: #f38ba8;
+        border-radius: 8px;
+    }
+}
+
+#tray {
+    padding-left: 6px;
+    padding-right: 4px;
+}
+
+#tray menu {
+    background: #1e1e2e;
+    color: #cdd6f4;
+}
+
+/* Subtle Hover Effects for Right Modules */
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
